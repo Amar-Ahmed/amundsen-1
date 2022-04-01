@@ -65,12 +65,6 @@ spec:
         echo "Server info"
 			  /usr/local/bin/jfrog rt docker-pull artifactory.cloud.cms.gov/edl-docker-prod-local/images/python:3.7-slim edl-docker-prod-local
         cd frontend/amundsen_application/static
-        file_package=package.json.temp
-        trimmedfilename1=$(basename $file_package .temp)
-        mv $file_package $trimmedfilename1
-        file_package_lock=package-lock.json.temp
-        trimmedfilename2=$(basename $file_package_lock .temp)
-        mv $file_package_lock $trimmedfilename2
         ls -al
         cd ../..
         docker build --no-cache -f public.Dockerfile .
